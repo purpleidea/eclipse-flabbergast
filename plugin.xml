@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.text"
+            file-extensions="o_0"
+            id="org.flabbergast.lsp.eclipse"
+            name="Flabbergast configuration file"
+            priority="normal">
+      </content-type>
+   </extension>
+   <extension
+         point="org.eclipse.lsp4e.languageServer">
+      <server
+            class="org.flabbergast.lsp.eclipse.FlabbergastLanguageServerStreamProvider"
+            id="org.flabbergast.lsp.eclipse.server1"
+            label="org.flabbergast.lsp.eclipse.server1">
+      </server>
+      <contentTypeMapping
+            contentType="org.flabbergast.lsp.eclipse"
+            id="org.flabbergast.lsp.eclipse.server1">
+      </contentTypeMapping>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editorContentTypeBinding
+            contentTypeId="org.flabbergast.lsp.eclipse"
+            editorId="org.eclipse.ui.genericeditor.GenericEditor">
+      </editorContentTypeBinding>
+   </extension>
+
+</plugin>
